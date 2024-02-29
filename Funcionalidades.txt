@@ -1,0 +1,16 @@
+1. Ingresar precio de un ítem y mostrar precio neto
+2. Ingresar cantidad de items y el precio de un producto para mostrar el precio neto
+3. Mostrar mensaje de error si es que el precio o la cantidad ingresados son menores o iguales a 0
+11. Mostrar descuento del 3% si la cantidad es 1000 o mayor
+13. Mostrar descuento del 5% si la cantidad es 3000 o mayor 
+14. Mostrar descuento del 7% si la cantidad es 7000 o mayor 
+15. Mostrar descuento del 10% si la cantidad es 10000 o mayor
+16. Mostrar descuento del 15% si la cantidad es 30000 o mayor
+12. Aplicar al precio neto el descuento dada la cantidad
+10. Seleccionar estado de UT y mostrar su impuesto de 6.65%
+9. Seleccionar estado de NV y mostrar su impuesto de 8.00%
+8. Seleccionar estado de TX y mostrar su impuesto de 6.25%
+7. Seleccionar estado de AL y mostrar su impuesto de 4.00%
+4. Seleccionar estado de CA y mostrar su impuesto de 8.25%
+5. Mostrar el impuesto correspondiente al estado seleccionado
+6. Mostrar el precio total de la compra incluyendo el impuesto
