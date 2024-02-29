@@ -1,7 +1,7 @@
-import sumar from "./sumador.js";
+import totalizar from "./totalizador.js";
 
-describe("Sumar", () => {
-  it("deberia sumar dos numeros", () => {
-    expect(sumar(3, 2)).toEqual(5);
+describe("Obtener Precio Neto", () => {
+  it("deberia mostrar el precio neto para un item", () => {
+    expect(totalizar(20)).toEqual(20);
   });
 });

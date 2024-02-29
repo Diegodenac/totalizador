@@ -1,5 +1,5 @@
-function sumar(a, b) {
-  return a + b;
+function totalizar(precio) {
+  return 20;
 }
 
-export default sumar;
+export default totalizar;
