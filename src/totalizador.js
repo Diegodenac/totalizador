@@ -6,7 +6,9 @@ function totalizar(precio, cantidad) {
 }
 
 function get_impuesto(estado){
-  return 8.25;
+  if(estado==='CA')
+    return 8.25;
+  return 4;
 }
 
 function calcular_impuesto(precioNeto, porcentajeImpuesto){

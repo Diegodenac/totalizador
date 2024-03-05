@@ -17,8 +17,12 @@ describe("Obtener Precio Neto", () => {
     expect(totalizar(0, -2)).toEqual("Error, la cantidad y el precio deben ser mayores a 0");
   });
 
-  it("deberia mostrar el impuesto segun el estado seleccionado", () => {
+  it("deberia mostrar el impuesto segun el estado seleccionado CA", () => {
     expect(get_impuesto('CA')).toEqual(8.25);
+  });
+
+  it("deberia mostrar el impuesto segun el estado seleccionado AL", () => {
+    expect(get_impuesto('AL')).toEqual(4);
   });
 
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto", () => {
