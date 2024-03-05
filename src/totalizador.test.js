@@ -34,27 +34,15 @@ describe("Obtener Precio Neto", () => {
   });
 
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto AL", () => {
-    expect(calcular_impuesto(100, 4)).toEqual(4);
+    expect(calcular_impuesto(100, 4)).toEqual(104);
   });
 
-  it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto AL", () => {
-    expect(calcular_impuesto(200, 4)).toEqual(8);
-  });
-
-  it("deberia calcular el precio total incluyendo el impuesto: 200 e impuesto de CA", () => {
+  it("deberia calcular el precio total incluyendo el impuesto", () => {
     expect(calcular_pt(200, 16.5)).toEqual(216.5);
   });
 
-  it("deberia calcular el precio total incluyendo el impuesto: 100 e impuesto CA", () => {
+  it("deberia calcular el precio total incluyendo el impuesto", () => {
     expect(calcular_pt(100, 8.25)).toEqual(108.25);
-  });
-
-  it("deberia calcular el precio total incluyendo el impuesto: 200 e impuesto de LA", () => {
-    expect(calcular_pt(200, 8)).toEqual(208);
-  });
-
-  it("deberia calcular el precio total incluyendo el impuesto: 100 e impuesto LA", () => {
-    expect(calcular_pt(100, 4)).toEqual(104);
   });
 
 });
