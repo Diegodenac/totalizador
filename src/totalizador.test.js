@@ -1,4 +1,4 @@
-import {totalizar, get_descuento} from "./totalizador.js";
+import {totalizar, get_impuesto} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
   it("deberia mostrar el precio neto para un item", () => {
@@ -18,6 +18,6 @@ describe("Obtener Precio Neto", () => {
   });
 
   it("deberia mostrar el descuento segun el estado seleccionado", () => {
-    expect(get_descuento('CA')).toEqual(8.25);
+    expect(get_impuesto('CA')).toEqual(8.25);
   });
 });

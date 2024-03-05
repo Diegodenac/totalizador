@@ -5,8 +5,8 @@ function totalizar(precio, cantidad) {
   return precio * cantidad;
 }
 
-function get_descuento(estado){
+function get_impuesto(estado){
   return 8.25;
 }
 
-export {totalizar, get_descuento};
+export {totalizar, get_impuesto};

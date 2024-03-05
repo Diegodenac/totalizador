@@ -1,4 +1,4 @@
-import {totalizar, get_descuento} from "./totalizador";
+import {totalizar, get_impuesto} from "./totalizador";
 
 const precioUnidad = document.querySelector("#precio");
 const cantidad = document.querySelector("#cantidad");
@@ -10,5 +10,5 @@ const divImpuesto = document.querySelector("#impuesto");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   divPrecioNeto.innerHTML = "<p> Precio neto(" + cantidad.value + "*$" + precioUnidad.value + "): " + parseInt(totalizar(precioUnidad.value, cantidad.value)) + "</p>";
-  divImpuesto.innerHTML = "<p> Impuesto para " + estado.value + "(%" + parseFloat(get_descuento(estado.value)) + "): ";
+  divImpuesto.innerHTML = "<p> Impuesto para " + estado.value + "(%" + parseFloat(get_impuesto(estado.value)) + "): ";
 });
