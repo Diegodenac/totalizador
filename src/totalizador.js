@@ -10,7 +10,7 @@ function get_impuesto(estado){
 }
 
 function calcular_impuesto(precioNeto, porcentajeImpuesto){
-  return 8.25;
+  return precioNeto*porcentajeImpuesto/100;
 }
 
 export {totalizar, get_impuesto, calcular_impuesto};

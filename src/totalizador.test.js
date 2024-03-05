@@ -25,4 +25,8 @@ describe("Obtener Precio Neto", () => {
     expect(calcular_impuesto(100, 8.25)).toEqual(8.25);
   });
 
+  it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto", () => {
+    expect(calcular_impuesto(200, 8.25)).toEqual(16.5);
+  });
+
 });
