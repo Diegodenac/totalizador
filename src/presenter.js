@@ -10,9 +10,9 @@ const divPrecioTotal = document.querySelector("#precio-total");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  precioNeto = totalizar(precioUnidad.value, cantidad.value);
-  porcentajeImpuesto = get_impuesto(estado.value);
-  impuesto = calcular_impuesto(precioNeto, porcentajeImpuesto);
+  let precioNeto = totalizar(precioUnidad.value, cantidad.value);
+  let porcentajeImpuesto = get_impuesto(estado.value);
+  let impuesto = calcular_impuesto(precioNeto, porcentajeImpuesto);
   divPrecioNeto.innerHTML = "<p> Precio neto(" + cantidad.value + "*$" + precioUnidad.value + "): " + parseInt(precioNeto) + "</p>";
   divImpuesto.innerHTML = "<p> Impuesto para " + estado.value + "(%" + parseFloat(porcentajeImpuesto) + "): " + parseFloat(impuesto) + "</p>";
   divPrecioTotal.innerHTML = "<p> Precio Total (impuesto): " + calcular_pt(precioNeto, impuesto) + "</p>";
