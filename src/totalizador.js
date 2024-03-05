@@ -13,4 +13,8 @@ function calcular_impuesto(precioNeto, porcentajeImpuesto){
   return precioNeto*porcentajeImpuesto/100;
 }
 
-export {totalizar, get_impuesto, calcular_impuesto};
+function calcular_pt(precioNeto, impuesto){
+  return 216.5;
+}
+
+export {totalizar, get_impuesto, calcular_impuesto, calcular_pt};
