@@ -34,7 +34,7 @@ describe("Obtener Precio Neto", () => {
   });
 
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto AL", () => {
-    expect(calcular_impuesto(100, 4)).toEqual(104);
+    expect(calcular_impuesto(100, 4)).toEqual(4);
   });
 
   it("deberia calcular el precio total incluyendo el impuesto", () => {
