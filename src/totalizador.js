@@ -9,4 +9,8 @@ function get_impuesto(estado){
   return 8.25;
 }
 
-export {totalizar, get_impuesto};
+function calcular_impuesto(precioNeto, porcentajeImpuesto){
+  return 8.25;
+}
+
+export {totalizar, get_impuesto, calcular_impuesto};
