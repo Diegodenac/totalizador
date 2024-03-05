@@ -14,7 +14,7 @@ function calcular_impuesto(precioNeto, porcentajeImpuesto){
 }
 
 function calcular_pt(precioNeto, impuesto){
-  return 216.5;
+  return precioNeto+impuesto;
 }
 
 export {totalizar, get_impuesto, calcular_impuesto, calcular_pt};

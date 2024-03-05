@@ -33,4 +33,8 @@ describe("Obtener Precio Neto", () => {
     expect(calcular_pt(200, 16.5)).toEqual(216.5);
   });
 
+  it("deberia calcular el precio total incluyendo el impuesto", () => {
+    expect(calcular_pt(100, 8.25)).toEqual(108.25);
+  });
+
 });
