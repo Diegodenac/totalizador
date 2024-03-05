@@ -1,4 +1,4 @@
-import totalizar from "./totalizador.js";
+import {totalizar, get_descuento} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
   it("deberia mostrar el precio neto para un item", () => {
@@ -15,5 +15,9 @@ describe("Obtener Precio Neto", () => {
 
   it("deberia mostrar un mensaje de error si el precio o la cantidad son menores o iguales a 0", () => {
     expect(totalizar(0, -2)).toEqual("Error, la cantidad y el precio deben ser mayores a 0");
+  });
+
+  it("deberia mostrar el descuento segun el estado seleccionado", () => {
+    expect(get_descuento('CA')).toEqual(8.25);
   });
 });

@@ -5,4 +5,8 @@ function totalizar(precio, cantidad) {
   return precio * cantidad;
 }
 
-export default totalizar;
+function get_descuento(estado){
+  return 8.25;
+}
+
+export {totalizar, get_descuento};
