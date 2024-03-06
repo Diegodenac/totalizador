@@ -27,4 +27,8 @@ function calcular_pt(precioNeto, impuesto){
   return precioNeto+impuesto;
 }
 
-export {totalizar, get_impuesto, calcular_impuesto, calcular_pt};
+function get_descuento(cantidad){
+  return 0;
+}
+
+export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento};
