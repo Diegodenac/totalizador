@@ -97,4 +97,8 @@ describe("Obtener Precio Neto", () => {
     expect(get_descuento(4500)).toEqual(5);
   });
 
+  it("deberia obtener el descuento 7% para una cantidad de 7000", () => {
+    expect(get_descuento(7000)).toEqual(7);
+  });
+
 });
