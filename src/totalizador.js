@@ -28,6 +28,8 @@ function calcular_pt(precioNeto, impuesto){
 }
 
 function get_descuento(cantidad){
+  if(cantidad >= 1000)
+    return 3;
   return 0;
 }
 
