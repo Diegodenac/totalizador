@@ -51,6 +51,8 @@ function calcular_descuento(precioNeto, porcentajeDescuento){
 }
 
 function get_porcentI_adicional(categoria){
+  if(categoria === 'vestimenta')
+    return 2;
   return 0;
 }
 

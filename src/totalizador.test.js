@@ -138,5 +138,11 @@ describe("Obtener Precio Neto", () => {
     expect(get_porcentD_adicional('varios')).toEqual(0);
   });
 
-  
+  it("deberia obtener el IMPUESTO ADICIONAL 2% para categoria vestimenta", () => {
+    expect(get_porcentI_adicional('vestimenta')).toEqual(2);
+  });
+
+  it("deberia obtener el DESCUENTO ADICIONAL 0% para categoria vestimenta", () => {
+    expect(get_porcentD_adicional('vestimenta')).toEqual(0);
+  });
 });
