@@ -146,11 +146,19 @@ describe("Obtener Precio Neto", () => {
     expect(get_porcentD_adicional('vestimenta')).toEqual(0);
   });
 
-  it("deberia obtener el IMPUESTO ADICIONAL 4% para categoria vestimenta", () => {
+  it("deberia obtener el IMPUESTO ADICIONAL 4% para categoria electronicos", () => {
     expect(get_porcentI_adicional('electronicos')).toEqual(4);
   });
 
-  it("deberia obtener el DESCUENTO ADICIONAL 1% para categoria vestimenta", () => {
+  it("deberia obtener el DESCUENTO ADICIONAL 1% para categoria electronicos", () => {
     expect(get_porcentD_adicional('electronicos')).toEqual(1);
+  });
+
+  it("deberia obtener el IMPUESTO ADICIONAL 3% para categoria muebles", () => {
+    expect(get_porcentI_adicional('muebles')).toEqual(3);
+  });
+
+  it("deberia obtener el DESCUENTO ADICIONAL 0% para categoria muebles", () => {
+    expect(get_porcentD_adicional('muebles')).toEqual(0);
   });
 });

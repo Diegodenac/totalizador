@@ -55,6 +55,8 @@ function get_porcentI_adicional(categoria){
     return 2;
   if(categoria === 'electronicos')
     return 4;
+  if(categoria === 'muebles')
+    return 3;
   return 0;
 }
 
