@@ -63,6 +63,8 @@ function get_porcentI_adicional(categoria){
 function get_porcentD_adicional(categoria){
   if(categoria === 'electronicos')
     return 1;
+  if(categoria === 'escritorio')
+    return 1.5;
   return 0;
 }
 

@@ -161,4 +161,12 @@ describe("Obtener Precio Neto", () => {
   it("deberia obtener el DESCUENTO ADICIONAL 0% para categoria muebles", () => {
     expect(get_porcentD_adicional('muebles')).toEqual(0);
   });
+
+  it("deberia obtener el IMPUESTO ADICIONAL 0% para categoria escritorio", () => {
+    expect(get_porcentI_adicional('escritorio')).toEqual(0);
+  });
+
+  it("deberia obtener el DESCUENTO ADICIONAL 1.5% para categoria escritorio", () => {
+    expect(get_porcentD_adicional('escritorio')).toEqual(1.5);
+  });
 });
