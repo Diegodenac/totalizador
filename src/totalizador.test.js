@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento} from "./totalizador.js";
+import {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
   
@@ -129,6 +129,14 @@ describe("Obtener Precio Neto", () => {
   });
 
   // Funcionalidades adicionales:
+
+  it("deberia obtener el IMPUESTO ADICIONAL 0% para categoria varios", () => {
+    expect(get_porcentI_adicional('varios')).toEqual(0);
+  });
+
+  it("deberia obtener el DESCUENTO ADICIONAL 0% para categoria varios", () => {
+    expect(get_porcentD_adicional('varios')).toEqual(0);
+  });
 
   
 });

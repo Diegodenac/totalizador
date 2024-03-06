@@ -50,4 +50,12 @@ function calcular_descuento(precioNeto, porcentajeDescuento){
   return precioNeto * porcentajeDescuento / 100;
 }
 
-export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento};
+function get_porcentI_adicional(categoria){
+  return 0;
+}
+
+function get_porcentD_adicional(categoria){
+  return 0;
+}
+
+export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional};
