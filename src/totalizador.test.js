@@ -29,8 +29,12 @@ describe("Obtener Precio Neto", () => {
     expect(get_impuesto('NV')).toEqual(8);
   });
 
-  it("deberia mostrar el impuesto segun el estado seleccionado NV", () => {
+  it("deberia mostrar el impuesto segun el estado seleccionado TX", () => {
     expect(get_impuesto('TX')).toEqual(6.25);
+  });
+
+  it("deberia mostrar el impuesto segun el estado seleccionado UT", () => {
+    expect(get_impuesto('UT')).toEqual(6.65);
   });
 
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto CA", () => {
