@@ -4,10 +4,13 @@ const precioUnidad = document.querySelector("#precio");
 const cantidad = document.querySelector("#cantidad");
 const form = document.querySelector("#totalizador-form");
 const estado = document.querySelector('#estado')
-const divPrecioNeto = document.querySelector("#precio-neto");
-const divDescuento = document.querySelector("#descuento");
-const divImpuesto = document.querySelector("#impuesto");
-const divPrecioTotal = document.querySelector("#precio-total");
+const categoria = document.querySelector('#categoria')
+
+const divPrecioNeto = document.querySelector("#div-precio-neto");
+const divDescuento = document.querySelector("#div-descuento");
+const divImpuesto = document.querySelector("#div-impuesto");
+const divCategoria = document.querySelector("#div-categoria");
+const divPrecioTotal = document.querySelector("#div-precio-total");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -20,5 +23,6 @@ form.addEventListener("submit", (event) => {
   divPrecioNeto.innerHTML = "<p> Precio neto(" + cantidad.value + "*$" + precioUnidad.value + "): " + parseFloat(precioNeto) + "</p>";
   divDescuento.innerHTML = "<p> Descuento (" + porcentajeDescuento +"%): " + montoDescuento + "</p>";
   divImpuesto.innerHTML = "<p> Impuesto para " + estado.value + "(%" + parseFloat(porcentajeImpuesto) + "): " + parseFloat(montoImpuesto) + "</p>";
-  divPrecioTotal.innerHTML = "<p> Precio Total (impuesto): " + calcular_pt(precioNeto, montoImpuesto, montoDescuento) + "</p>";
+  divCategoria.innerHTML = "<p> Descuento por categoria " + categoria.value + "(%" + "): " + "</p>"; // get_porcentajeCategoria(categoria)
+  divPrecioTotal.innerHTML = "<p> Precio Total (impuesto y descuento): " + calcular_pt(precioNeto, montoImpuesto, montoDescuento) + "</p>";
 });
