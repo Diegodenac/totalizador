@@ -37,6 +37,10 @@ describe("Obtener Precio Neto", () => {
     expect(get_impuesto('UT')).toEqual(6.65);
   });
 
+  it("deberia mostrar error si el estado recibido no corresponde a un estado", () => {
+    expect(get_impuesto('OT')).toEqual("Estado no encontrado");
+  });
+
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto CA", () => {
     expect(calcular_impuesto(100, 8.25)).toEqual(8.25);
   });
