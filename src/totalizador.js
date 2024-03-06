@@ -34,7 +34,7 @@ function get_descuento(cantidad){
 }
 
 function calcular_descuento(precioNeto, porcentajeDescuento){
-  return 0;
+  return precioNeto * porcentajeDescuento / 100;
 }
 
 export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento};
