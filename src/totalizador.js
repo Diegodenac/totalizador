@@ -24,7 +24,7 @@ function calcular_impuesto(precioNeto, porcentajeImpuesto){
 }
 
 function calcular_pt(montoPrecioNeto, montoImpuesto, montoDescuento){
-  return montoPrecioNeto+montoImpuesto-montoDescuento;
+  return montoPrecioNeto + montoImpuesto - montoDescuento;
 }
 
 function get_descuento(cantidad){
