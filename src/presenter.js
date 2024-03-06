@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, get_descuento, calcular_impuesto, calcular_descuento, calcular_pt} from "./totalizador";
+import {totalizar, get_impuesto, get_descuento, calcular_impuesto, calcular_descuento, calcular_pt, get_porcentD_adicional, get_porcentI_adicional} from "./totalizador";
 
 const precioUnidad = document.querySelector("#precio");
 const cantidad = document.querySelector("#cantidad");
@@ -15,14 +15,27 @@ const divPrecioTotal = document.querySelector("#div-precio-total");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let precioNeto = totalizar(precioUnidad.value, cantidad.value);
-  let porcentajeDescuento = get_descuento(cantidad.value);
-  let montoDescuento = calcular_descuento(precioNeto, porcentajeDescuento);
+  //Descuento Cantidad
+  let porDesCan = get_descuento(cantidad.value);
+  let montoDesCan = calcular_descuento(precioNeto, porDesCan);
+  //Descuento Adicional
+  let porDesAdi = get_porcentD_adicional(categoria.value);
+  let montoDesAdi =  calcular_descuento(precioNeto, porDesAdi);
+  //Precio neto descontado
+  let montoDescuento = montoDesCan+montoDesAdi;
   let precioDescuento = precioNeto-montoDescuento;
-  let porcentajeImpuesto = get_impuesto(estado.value);
-  let montoImpuesto = calcular_impuesto(precioDescuento, porcentajeImpuesto);
-  divPrecioNeto.innerHTML = "<p> Precio neto(" + cantidad.value + "*$" + precioUnidad.value + "): " + parseFloat(precioNeto) + "</p>";
-  divDescuento.innerHTML = "<p> Descuento (" + porcentajeDescuento +"%): " + montoDescuento + "</p>";
-  divImpuesto.innerHTML = "<p> Impuesto para " + estado.value + "(%" + parseFloat(porcentajeImpuesto) + "): " + parseFloat(montoImpuesto) + "</p>";
-  divCategoria.innerHTML = "<p> Descuento por categoria " + categoria.value + "(%" + "): " + "</p>"; // get_porcentajeCategoria(categoria)
-  divPrecioTotal.innerHTML = "<p> Precio Total (impuesto y descuento): " + calcular_pt(precioNeto, montoImpuesto, montoDescuento) + "</p>";
+  //Impuesto Estado
+  let porImpEst = get_impuesto(estado.value); 
+  let montoImpEst = calcular_impuesto(precioDescuento, porImpEst);
+  //Impuesto Adicional
+  let porImpAdi = get_porcentI_adicional(categoria.value);
+  let montoImpAdi = calcular_impuesto(precioDescuento, porImpAdi)
+  //Calcular Precio Total
+  let precioTotal = precioDescuento + montoImpAdi + montoImpEst;
+  
+  divPrecioNeto.innerHTML = "<p>DETALLE</p><p> Precio neto(" + cantidad.value + "*$" + precioUnidad.value + "): " + parseFloat(precioNeto) + "</p>";
+  divDescuento.innerHTML = "<p> Descuento (" + porDesCan +"%): " + montoDesCan + "</p>";
+  divImpuesto.innerHTML = "<p> Impuesto para " + estado.value + "(%" + parseFloat(porImpEst) + "): " + parseFloat(montoImpEst) + "</p>";
+  divCategoria.innerHTML = "<p> Descuento por categoria " + categoria.value + "(%" + parseFloat(porDesAdi) + "): " + parseFloat(montoDesAdi) + "</p>" + "<p> Impuesto por categoria " + categoria.value + "(%" + parseFloat(porImpAdi)+ "): " + parseFloat(montoImpAdi) + "</p>"; 
+  divPrecioTotal.innerHTML = "<p> Precio Total (impuesto y descuento): " + precioTotal + "</p>";
 });
