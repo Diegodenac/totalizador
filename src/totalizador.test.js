@@ -93,7 +93,7 @@ describe("Obtener Precio Neto", () => {
     expect(get_descuento(3000)).toEqual(5);
   });
 
-  it("deberia obtener el descuento 5% para una cantidad de 4500 o mas", () => {
+  it("deberia obtener el descuento 5% para una cantidad de 3000 o mas", () => {
     expect(get_descuento(4500)).toEqual(5);
   });
 
