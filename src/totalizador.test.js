@@ -81,4 +81,8 @@ describe("Obtener Precio Neto", () => {
     expect(calcular_descuento(100, 3)).toEqual(3);
   });
 
+  it("deberia calcular el descuento segun el porcentajeDescuento y el precioNeto, 200, 6", () => {
+    expect(calcular_descuento(200, 3)).toEqual(6);
+  });
+
 });
