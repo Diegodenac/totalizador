@@ -53,10 +53,14 @@ function calcular_descuento(precioNeto, porcentajeDescuento){
 function get_porcentI_adicional(categoria){
   if(categoria === 'vestimenta')
     return 2;
+  if(categoria === 'electronicos')
+    return 4;
   return 0;
 }
 
 function get_porcentD_adicional(categoria){
+  if(categoria === 'electronicos')
+    return 1;
   return 0;
 }
 
