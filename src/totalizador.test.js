@@ -1,6 +1,9 @@
 import {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
+  
+  // Funcionalidades iniciales:
+
   it("deberia mostrar el precio neto para un item", () => {
     expect(totalizar(20, 1)).toEqual(20);
   });
@@ -89,10 +92,6 @@ describe("Obtener Precio Neto", () => {
     expect(calcular_descuento(200, 3)).toEqual(6);
   });
 
-
-
-  ///////////////////////////////////////////////////////////////////////////////
-
   it("deberia obtener el descuento 5% para una cantidad de 3000", () => {
     expect(get_descuento(3000)).toEqual(5);
   });
@@ -128,4 +127,8 @@ describe("Obtener Precio Neto", () => {
   it("deberia calcular el descuento segun el precioNeto y el porcentajeDescuento, 100, 3", () => {
     expect(calcular_descuento(10000, 30)).toEqual(3000);
   });
+
+  // Funcionalidades adicionales:
+
+  
 });
