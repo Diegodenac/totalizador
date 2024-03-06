@@ -53,12 +53,16 @@ describe("Obtener Precio Neto", () => {
     expect(calcular_impuesto(100, 4)).toEqual(4);
   });
 
-  it("deberia calcular el precio total incluyendo el impuesto", () => {
-    expect(calcular_pt(200, 16.5)).toEqual(216.5);
+  it("deberia calcular el precio total incluyendo el impuesto precio_neto 200 impuesto 16.5", () => {
+    expect(calcular_pt(200, 16.5, 0)).toEqual(216.5);
   });
 
-  it("deberia calcular el precio total incluyendo el impuesto", () => {
-    expect(calcular_pt(100, 8.25)).toEqual(108.25);
+  it("deberia calcular el precio total incluyendo el impuesto precio_neto 100 impuesto 8.25", () => {
+    expect(calcular_pt(100, 8.25, 0)).toEqual(108.25);
+  });
+
+  it("deberia calcular el precio total incluyendo el impuesto y el descuento precio_neto 100, impuesto 8.0025 , descuento 3", () => {
+    expect(calcular_pt(100, 8.0025, 3)).toEqual(105.0025);
   });
 
   it("deberia obtener el descuento 0% para una cantidad 100", () => {
