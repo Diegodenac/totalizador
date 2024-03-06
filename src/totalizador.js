@@ -10,7 +10,9 @@ function get_impuesto(estado){
     return 8.25;
   if(estado==='AL')
     return 4;
-  return 8;
+  if(estado==='NV')
+    return 8;
+  return 6.25
 }
 
 function calcular_impuesto(precioNeto, porcentajeImpuesto){
