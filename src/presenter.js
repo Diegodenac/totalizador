@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, get_descuento, calcular_impuesto, calcular_descuento, get_porcentD_adicional, get_porcentI_adicional, get_costeEnvio} from "./totalizador";
+import {totalizar, get_impuesto, get_descuento, calcular_Descuento_o_Impuesto, get_porcentD_adicional, get_porcentI_adicional, get_costeEnvio} from "./totalizador";
 
 const precioUnidad = document.querySelector("#precio");
 const cantidad = document.querySelector("#cantidad");
@@ -20,11 +20,11 @@ form.addEventListener("submit", (event) => {
 
   //Descuento Cantidad
   let porDesCan = get_descuento(cantidad.value);
-  let montoDesCan = calcular_descuento(precioNeto, porDesCan);
+  let montoDesCan = calcular_Descuento_o_Impuesto(precioNeto, porDesCan);
 
   //Descuento Adicional
   let porDesAdi = get_porcentD_adicional(categoria.value);
-  let montoDesAdi =  calcular_descuento(precioNeto, porDesAdi);
+  let montoDesAdi =  calcular_Descuento_o_Impuesto(precioNeto, porDesAdi);
 
   //Precio neto descontado
   let montoDescuento = montoDesCan+montoDesAdi;
@@ -32,11 +32,11 @@ form.addEventListener("submit", (event) => {
 
   //Impuesto Estado
   let porImpEst = get_impuesto(estado.value); 
-  let montoImpEst = calcular_impuesto(precioDescuento, porImpEst);
+  let montoImpEst = calcular_Descuento_o_Impuesto(precioDescuento, porImpEst);
 
   //Impuesto Adicional
   let porImpAdi = get_porcentI_adicional(categoria.value);
-  let montoImpAdi = calcular_impuesto(precioDescuento, porImpAdi);
+  let montoImpAdi = calcular_Descuento_o_Impuesto(precioDescuento, porImpAdi);
 
   //Obtener coste de envio
   let envioUni = get_costeEnvio(pesoU.value);

@@ -5,6 +5,20 @@ function totalizar(precio, cantidad) {
   return precio * cantidad;
 }
 
+function get_descuento(cantidad){
+  if(cantidad >= 30000)
+    return 15;
+  if(cantidad >= 10000)
+    return 10;
+  if(cantidad >= 7000)
+    return 7;
+  if(cantidad >= 3000)
+    return 5;
+  if(cantidad >= 1000)
+    return 3;
+  return 0;
+}
+
 function get_impuesto(estado){
   if(estado==='CA')
     return 8.25;
@@ -19,35 +33,18 @@ function get_impuesto(estado){
   return "Estado no encontrado";
 }
 
-function calcular_impuesto(precioNeto, porcentajeImpuesto){
-  return precioNeto*porcentajeImpuesto/100;
+function calcular_Descuento_o_Impuesto(precioNeto, porcentaje){
+  return precioNeto*porcentaje/100;
 }
 
-function calcular_pt(montoPrecioNeto, montoImpuesto, montoDescuento){
-  return montoPrecioNeto + montoImpuesto - montoDescuento;
-}
-
-function get_descuento(cantidad){
-  if(cantidad >= 30000)
-    return 15;
-
-  if(cantidad >= 10000)
-    return 10;
-  
-  if(cantidad >= 7000)
-    return 7;
-  
-  if(cantidad >= 3000)
-    return 5;
-
-  if(cantidad >= 1000)
-    return 3;
-
+function get_porcentD_adicional(categoria){
+  if(categoria === 'electronicos')
+    return 1;
+  if(categoria === 'escritorio')
+    return 1.5;
+  if(categoria === 'alimentos')
+    return 2;
   return 0;
-}
-
-function calcular_descuento(precioNeto, porcentajeDescuento){
-  return precioNeto * porcentajeDescuento / 100;
 }
 
 function get_porcentI_adicional(categoria){
@@ -59,16 +56,6 @@ function get_porcentI_adicional(categoria){
     return 3;
   if(categoria === 'alcohol')
     return 7;
-  return 0;
-}
-
-function get_porcentD_adicional(categoria){
-  if(categoria === 'electronicos')
-    return 1;
-  if(categoria === 'escritorio')
-    return 1.5;
-  if(categoria === 'alimentos')
-    return 2;
   return 0;
 }
 
@@ -84,4 +71,4 @@ function get_costeEnvio(peso){
   return "Parametro no definido";
 }
 
-export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio};
+export {totalizar, get_descuento, get_impuesto, calcular_Descuento_o_Impuesto, get_porcentD_adicional, get_porcentI_adicional, get_costeEnvio};
