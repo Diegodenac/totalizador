@@ -73,6 +73,8 @@ function get_porcentD_adicional(categoria){
 }
 
 function get_costeEnvio(peso){
+  if (peso>10)
+    return "Parametro no definido";
   return 0;
 }
 
