@@ -82,6 +82,8 @@ function get_costeEnvio(peso){
 function get_descuento_cliente_envio(cliente){
   if(cliente == 'normal')
     return 0;
+  if(cliente == 'recurrente')
+    return 0.5;
 }
 
  function calcular_pt(precio, imp, des){

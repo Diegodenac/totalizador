@@ -222,4 +222,8 @@ describe("Obtener Precio Neto", () => {
     expect(get_descuento_cliente_envio('normal')).toEqual(0);
   });
 
+  it("deberia obtener el TIPO DE CLIENTE Recurrente y deberia devolver 0.5% de descuento en el costo de envio", () => {
+    expect(get_descuento_cliente_envio('recurrente')).toEqual(0.5);
+  });
+
 });
