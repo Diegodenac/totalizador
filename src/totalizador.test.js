@@ -177,4 +177,12 @@ describe("Obtener Precio Neto", () => {
   it("deberia obtener el DESCUENTO ADICIONAL 0% para categoria alcohol", () => {
     expect(get_porcentD_adicional('alcohol')).toEqual(0);
   });
+
+  it("deberia obtener el IMPUESTO ADICIONAL 0% para categoria alimentos", () => {
+    expect(get_porcentI_adicional('alimentos')).toEqual(0);
+  });
+
+  it("deberia obtener el DESCUENTO ADICIONAL 2% para categoria alimentos", () => {
+    expect(get_porcentD_adicional('alimentos')).toEqual(2);
+  });
 });

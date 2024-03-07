@@ -67,6 +67,8 @@ function get_porcentD_adicional(categoria){
     return 1;
   if(categoria === 'escritorio')
     return 1.5;
+  if(categoria === 'alimentos')
+    return 2;
   return 0;
 }
 
