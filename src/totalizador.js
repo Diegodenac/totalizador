@@ -93,6 +93,8 @@ function get_descuento_cliente_envio(cliente){
 function get_descuento_montoFijo(cliente, precioNeto, categoria){
   if(cliente == 'recurrente' && precioNeto > 3000 && categoria == 'alimentos')
     return 100;
+  if(cliente == 'especial' && precioNeto > 7000 && categoria == 'electronicos')
+    return 200;
 }
 
  function calcular_pt(precio, imp, des){
