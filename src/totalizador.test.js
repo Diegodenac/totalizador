@@ -230,4 +230,8 @@ describe("Obtener Precio Neto", () => {
     expect(get_descuento_cliente_envio('antiguo')).toEqual(1);
   });
 
+  it("deberia obtener el TIPO DE CLIENTE Especial y deberia devolver 1.5% de descuento en el costo de envio", () => {
+    expect(get_descuento_cliente_envio('especial')).toEqual(1.5);
+  });
+
 });

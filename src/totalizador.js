@@ -86,6 +86,8 @@ function get_descuento_cliente_envio(cliente){
     return 0.5;
   if(cliente == 'antiguo')
     return 1;
+  if(cliente == 'especial')
+    return 1.5;
 }
 
  function calcular_pt(precio, imp, des){
