@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio} from "./totalizador.js";
+import {totalizar, get_impuesto, calcular_pt, get_descuento, calcular_Descuento_o_Impuesto, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
   
@@ -45,15 +45,15 @@ describe("Obtener Precio Neto", () => {
   });
 
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto CA", () => {
-    expect(calcular_impuesto(100, 8.25)).toEqual(8.25);
+    expect(calcular_Descuento_o_Impuesto(100, 8.25)).toEqual(8.25);
   });
 
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto CA", () => {
-    expect(calcular_impuesto(200, 8.25)).toEqual(16.5);
+    expect(calcular_Descuento_o_Impuesto(200, 8.25)).toEqual(16.5);
   });
 
   it("deberia calcular el impuesto segun el porcentajeObtenido y el precioNeto AL", () => {
-    expect(calcular_impuesto(100, 4)).toEqual(4);
+    expect(calcular_Descuento_o_Impuesto(100, 4)).toEqual(4);
   });
 
   it("deberia calcular el precio total incluyendo el impuesto precio_neto 200 impuesto 16.5", () => {
@@ -81,15 +81,15 @@ describe("Obtener Precio Neto", () => {
   });
 
   it("deberia calcular el descuento segun el porcentajeDescuento y el precioNeto", () => {
-    expect(calcular_descuento(100, 0)).toEqual(0);
+    expect(calcular_Descuento_o_Impuesto(100, 0)).toEqual(0);
   });
 
   it("deberia calcular el descuento segun el porcentajeDescuento y el precioNeto, 100, 3", () => {
-    expect(calcular_descuento(100, 3)).toEqual(3);
+    expect(calcular_Descuento_o_Impuesto(100, 3)).toEqual(3);
   });
 
   it("deberia calcular el descuento segun el porcentajeDescuento y el precioNeto, 200, 6", () => {
-    expect(calcular_descuento(200, 3)).toEqual(6);
+    expect(calcular_Descuento_o_Impuesto(200, 3)).toEqual(6);
   });
 
   it("deberia obtener el descuento 5% para una cantidad de 3000", () => {
@@ -125,7 +125,7 @@ describe("Obtener Precio Neto", () => {
   });
 
   it("deberia calcular el descuento segun el precioNeto y el porcentajeDescuento, 100, 3", () => {
-    expect(calcular_descuento(10000, 30)).toEqual(3000);
+    expect(calcular_Descuento_o_Impuesto(10000, 30)).toEqual(3000);
   });
 
   // Funcionalidades adicionales:
@@ -198,11 +198,11 @@ describe("Obtener Precio Neto", () => {
     expect(get_costeEnvio(-4)).toEqual("Parametro no definido");
   });
 
-  it("deberia obtener el COSTE DE ENVIO UNITARIO entre 11-20 deberia devolver 3.5", () => {
+  it("deberia obtener el COSTE DE ENVIO UNITARIO entre 21-40 deberia devolver 5", () => {
     expect(get_costeEnvio(21)).toEqual(5);
   });
 
 
 
-  
+
 });
