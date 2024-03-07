@@ -72,4 +72,8 @@ function get_porcentD_adicional(categoria){
   return 0;
 }
 
-export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional};
+function get_costeEnvio(peso){
+  return 0;
+}
+
+export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio};

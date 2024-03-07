@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional} from "./totalizador.js";
+import {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
   
@@ -184,5 +184,9 @@ describe("Obtener Precio Neto", () => {
 
   it("deberia obtener el DESCUENTO ADICIONAL 2% para categoria alimentos", () => {
     expect(get_porcentD_adicional('alimentos')).toEqual(2);
+  });
+
+  it("deberia obtener el COSTE DE ENVIO UNITARIO entre 0-10 deberia devolver 0", () => {
+    expect(get_costeEnvio(0)).toEqual(0);
   });
 });
