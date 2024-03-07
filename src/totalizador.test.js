@@ -234,11 +234,11 @@ describe("Obtener Precio Neto", () => {
     expect(get_descuento_cliente_envio('especial')).toEqual(1.5);
   });
 
-  it("deberia obtener un descuento de monto fijo de 100 si el cliente es Recurrente, el Precio Neto es mayor a 3000 y la Categoría es Alimentos.", () => {
+  it("deberia obtener un descuento de monto fijo de 100 si el cliente es Recurrente, el Precio Neto es mayor a 3000 y la Categoría es Alimentos", () => {
     expect(get_descuento_montoFijo('recurrente', 4050, 'alimentos')).toEqual(100);
   });
 
-  it("deberia obtener un descuento de monto fijo de 200 si el cliente es Especial, el Precio Neto es mayor a 7000 y la Categoría es Electronicos.", () => {
+  it("deberia obtener un descuento de monto fijo de 200 si el cliente es Especial, el Precio Neto es mayor a 7000 y la Categoría es Electronicos", () => {
     expect(get_descuento_montoFijo('especial', 10000, 'electronicos')).toEqual(200);
   });
 });

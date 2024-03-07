@@ -95,6 +95,7 @@ function get_descuento_montoFijo(cliente, precioNeto, categoria){
     return 100;
   if(cliente == 'especial' && precioNeto > 7000 && categoria == 'electronicos')
     return 200;
+  return 0;
 }
 
  function calcular_pt(precio, imp, des){
