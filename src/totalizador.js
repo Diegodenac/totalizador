@@ -67,8 +67,11 @@ function get_costeEnvio(peso){
       return 3.5;
     if(peso < 41)
       return 5;
-    if(peso < 81)
+    if(peso <= 80)
       return 6;
+    if(peso >=80 && peso<=100){
+      return 6.5
+    }
   }
   return "Parametro no definido";
 }
