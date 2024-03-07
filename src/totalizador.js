@@ -78,8 +78,14 @@ function get_costeEnvio(peso){
   }
   return "Parametro no definido";
 }
+
+function get_descuento_cliente_envio(cliente){
+  if(cliente == 'normal')
+    return 0;
+}
+
  function calcular_pt(precio, imp, des){
   return precio-des+imp;
  }
 
-export {totalizar, calcular_pt, get_descuento, get_impuesto, calcular_Descuento_o_Impuesto, get_porcentD_adicional, get_porcentI_adicional, get_costeEnvio};
+export {totalizar, calcular_pt, get_descuento, get_impuesto, calcular_Descuento_o_Impuesto, get_porcentD_adicional, get_porcentI_adicional, get_costeEnvio, get_descuento_cliente_envio};

@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, calcular_pt, get_descuento, calcular_Descuento_o_Impuesto, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio} from "./totalizador.js";
+import {totalizar, get_impuesto, calcular_pt, get_descuento, calcular_Descuento_o_Impuesto, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio, get_descuento_cliente_envio} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
   
@@ -216,6 +216,10 @@ describe("Obtener Precio Neto", () => {
 
   it("deberia obtener el COSTE DE ENVIO UNITARIO mayor a 200 deberia devolver 9", () => {
     expect(get_costeEnvio(400)).toEqual(9);
+  });
+
+  it("deberia obtener el TIPO DE CLIENTE Normal y deberia devolver 0% de descuento en el costo de envio", () => {
+    expect(get_descuento_cliente_envio('normal')).toEqual(0);
   });
 
 });
