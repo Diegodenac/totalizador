@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, calcular_pt, get_descuento, calcular_Descuento_o_Impuesto, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio, get_descuento_cliente_envio} from "./totalizador.js";
+import {totalizar, get_impuesto, calcular_pt, get_descuento, calcular_Descuento_o_Impuesto, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio, get_descuento_cliente_envio, get_descuento_montoFijo} from "./totalizador.js";
 
 describe("Obtener Precio Neto", () => {
   
@@ -232,6 +232,10 @@ describe("Obtener Precio Neto", () => {
 
   it("deberia obtener el TIPO DE CLIENTE Especial y deberia devolver 1.5% de descuento en el costo de envio", () => {
     expect(get_descuento_cliente_envio('especial')).toEqual(1.5);
+  });
+
+  it("deberia obtener un descuento de monto fijo de $100 si el cliente es Recurrente, el Precio Neto es mayor a 3000 y la Categoría es Alimentos.", () => {
+    expect(get_descuento_montoFijo('recurrente', 4050, 'alimentos')).toEqual(100);
   });
 
 });
