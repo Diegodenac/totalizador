@@ -199,6 +199,6 @@ describe("Obtener Precio Neto", () => {
   });
 
   it("deberia obtener el COSTE DE ENVIO UNITARIO entre 11-20 deberia devolver 3.5", () => {
-    expect(get_costeEnvio(21)).toEqual("Parametro no definido");
+    expect(get_costeEnvio(21)).toEqual(5);
   });
 });
