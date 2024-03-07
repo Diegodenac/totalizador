@@ -84,6 +84,8 @@ function get_descuento_cliente_envio(cliente){
     return 0;
   if(cliente == 'recurrente')
     return 0.5;
+  if(cliente == 'antiguo')
+    return 1;
 }
 
  function calcular_pt(precio, imp, des){
