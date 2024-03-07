@@ -1,4 +1,4 @@
-import {totalizar, get_impuesto, get_descuento, calcular_Descuento_o_Impuesto, get_porcentD_adicional, get_porcentI_adicional, get_costeEnvio} from "./totalizador";
+import {totalizar, get_impuesto, get_descuento, calcular_Descuento_o_Impuesto, get_porcentD_adicional, get_porcentI_adicional, get_costeEnvio, get_descuento_cliente_envio} from "./totalizador";
 
 const precioUnidad = document.querySelector("#precio");
 const cantidad = document.querySelector("#cantidad");
@@ -6,6 +6,7 @@ const form = document.querySelector("#totalizador-form");
 const estado = document.querySelector('#estado')
 const categoria = document.querySelector('#categoria')
 const pesoU = document.querySelector('#pesoU')
+const cliente = document.querySelector('#cliente')
 
 const divPrecioNeto = document.querySelector("#div-precio-neto");
 const divDescuento = document.querySelector("#div-descuento");
@@ -42,6 +43,11 @@ form.addEventListener("submit", (event) => {
   let envioUni = get_costeEnvio(pesoU.value);
   let montoEnvio = envioUni * cantidad.value;
 
+  //Descuento en el coste de envio
+  let por_Cliente_Des = get_descuento_cliente_envio(cliente.value);
+  let monto_Cliente_Des = calcular_Descuento_o_Impuesto(montoEnvio, por_Cliente_Des);
+  montoEnvio = montoEnvio - monto_Cliente_Des;
+
   //Calcular Precio Total
   let precioTotal = precioDescuento + montoImpEst + montoImpAdi + montoEnvio;
   
@@ -49,6 +55,6 @@ form.addEventListener("submit", (event) => {
   divDescuento.innerHTML = "<p> Descuento (" + porDesCan +"%): $" + montoDesCan + "</p>";
   divImpuesto.innerHTML = "<p> Impuesto para " + estado.value + " (%" + parseFloat(porImpEst) + "): $" + parseFloat(montoImpEst) + "</p>";
   divCategoria.innerHTML = "<p> Descuento por categoria " + categoria.value + " (%" + parseFloat(porDesAdi) + "): $" + parseFloat(montoDesAdi) + "</p>" + "<p> Impuesto por categoria " + categoria.value + " (%" + parseFloat(porImpAdi)+ "): $" + parseFloat(montoImpAdi) + "</p>"; 
-  divCosteEnvio.innerHTML = "<p> Coste Unitario Envio: $" + envioUni + "</p>"+"<p> Coste Envio: $" + montoEnvio + "</p>";
-  divPrecioTotal.innerHTML = "<p> Precio Total (impuesto y descuento): $" + precioTotal + "</p>";
+  divCosteEnvio.innerHTML = "<p> Coste Unitario Envio: $" + envioUni + "</p>" + "<p> Descuento en Coste Envio por ser cliente " + cliente.value + " (%" + parseFloat(por_Cliente_Des) + "): $" + parseFloat(monto_Cliente_Des) + "</p>" + "<p> Coste Envio: $" + montoEnvio + "</p>";
+  divPrecioTotal.innerHTML = "<p> Precio Total (impuestos, descuentos y envio): $" + precioTotal + "</p>";
 });
