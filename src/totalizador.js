@@ -57,6 +57,8 @@ function get_porcentI_adicional(categoria){
     return 4;
   if(categoria === 'muebles')
     return 3;
+  if(categoria === 'alcohol')
+    return 7;
   return 0;
 }
 

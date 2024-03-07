@@ -169,4 +169,12 @@ describe("Obtener Precio Neto", () => {
   it("deberia obtener el DESCUENTO ADICIONAL 1.5% para categoria escritorio", () => {
     expect(get_porcentD_adicional('escritorio')).toEqual(1.5);
   });
+  
+  it("deberia obtener el IMPUESTO ADICIONAL 7% para categoria alcohol", () => {
+    expect(get_porcentI_adicional('alcohol')).toEqual(7);
+  });
+
+  it("deberia obtener el DESCUENTO ADICIONAL 0% para categoria alcohol", () => {
+    expect(get_porcentD_adicional('alcohol')).toEqual(0);
+  });
 });
