@@ -36,7 +36,7 @@ form.addEventListener("submit", (event) => {
   let envioUni = get_costeEnvio(pesoU.value);
   let montoEnvio = envioUni * cantidad.value;
   //Calcular Precio Total
-  let precioTotal = precioDescuento + montoImpAdi + montoImpEst;
+  let precioTotal = precioDescuento + montoImpAdi + montoImpEst + montoEnvio;
   
   divPrecioNeto.innerHTML = "<p>DETALLE</p><p> Precio neto(" + cantidad.value + "*$" + precioUnidad.value + "): " + parseFloat(precioNeto) + "</p>";
   divDescuento.innerHTML = "<p> Descuento (" + porDesCan +"%): " + montoDesCan + "</p>";

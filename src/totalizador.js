@@ -73,9 +73,12 @@ function get_porcentD_adicional(categoria){
 }
 
 function get_costeEnvio(peso){
-  if (peso>10)
+  if (peso<0)
     return "Parametro no definido";
-  return 0;
+  else
+    if (peso < 11)
+      return 0;
+  return 3.5;
 }
 
 export {totalizar, get_impuesto, calcular_impuesto, calcular_pt, get_descuento, calcular_descuento, get_porcentI_adicional, get_porcentD_adicional, get_costeEnvio};
